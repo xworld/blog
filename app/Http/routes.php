@@ -11,6 +11,12 @@
 |
 */
 
+//文章
+Route::group(['prefix' => 'article'], function () {
+    Route::get('article.json','Article\ArticleController@getArticles');
+    Route::get('article/{id}.json','Article\ArticleController@getArticle');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
